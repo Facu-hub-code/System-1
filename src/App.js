@@ -11,6 +11,7 @@ function App() {
           credentialResponse.credential
         );
         console.log(credentialResponseDecoded);
+        console.log(process.env.REACT_APP_GOOGLE_CLIENT_ID)
       }}
       onError={() => {
         console.log('Login Failed');
