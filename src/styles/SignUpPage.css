@@ -1,0 +1,53 @@
+.signup-page {
+    display: flex;
+    justify-content: space-between;
+    background-image: url('../images/background.png');
+    background-size: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ajusta el ancho al 100% del contenedor */
+    height: 100%; /* Ajusta la altura al 100% del contenedor */
+    object-fit: cover; /* Ajusta el tamaño de la imagen para cubrir completamente el contenedor */
+}
+
+.left-section {
+    flex: 1;
+}
+
+.right-section {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.account-signup {
+    font-size: 24px;
+    color: #000000;
+}
+
+.welcome-message {
+    font-size: 18px;
+    color: #8692A6;
+}
+
+.marvel-logo {
+        position: absolute;
+        top: 10%;  /* Adjust the vertical position as needed */
+        left: 10%; /* Adjust the horizontal position as needed */
+        transform: translate(-50%, -50%); /* Center the image based on its size */
+        width: 300px; /* Adjust the width as needed */
+        height: 200px; /* Maintain image proportion */
+        /* Other styles as needed */
+    }
+    
+    .register-button {
+        width: 50px; /* Adjust the width as needed */
+        height: auto; /* Maintain image proportion */
+        /* Other styles as needed */
+    }
+
+    
+    /* You can continue adding styles as needed */

@@ -1,0 +1,26 @@
+.signup-form {
+    /* Agrega estilos según sea necesario */
+  }
+  
+  .email-input {
+    display: flex;
+    align-items: center;
+  }
+  
+  .email-input img {
+    margin-right: 10px;
+    /* Puedes ajustar el margen según sea necesario */
+  }
+  
+  .password-input {
+    display: flex;
+    align-items: center;
+  }
+  
+  .password-input img {
+    margin-right: 10px;
+    /* Puedes ajustar el margen según sea necesario */
+  }
+  
+  /* Puedes seguir añadiendo estilos según sea necesario */
+  
