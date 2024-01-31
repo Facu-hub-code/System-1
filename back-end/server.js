@@ -17,6 +17,21 @@ const connection = mysql.createConnection({
   database: process.env.DB_DATABASE,
 });
 
+// Handle SIGINT signals
+process.on('SIGINT', () => {
+  console.log('\nClosing the server...');
+  // Close the database connection
+  connection.end((err) => {
+    if (err) {
+      console.error('Error closing the database connection:', err.message);
+    } else {
+      console.log('Database connection closed.');
+    }
+    // Close the Express server
+    process.exit();
+  });
+});
+
 connection.connect((err) => {
   if (err) {
     console.error('Error connecting to the database:', err);
