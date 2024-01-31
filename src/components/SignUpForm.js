@@ -16,8 +16,6 @@ const SignUpForm = () => {
                 <img className="password-image" src={require('../images/PasswordRectangle.png')} alt="Password Rectangle" />
                 <input type="password" id="password" placeholder="Enter your password" />
             </div>
-
-            {/* Botón de registro */}
             <RegisterButton />
         </div>
     );

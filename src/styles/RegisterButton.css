@@ -1,8 +1,9 @@
 .register-button {
-    /* Agrega estilos según sea necesario */
-  }
-  
-  .register-button img {
-    /* Puedes ajustar el tamaño, margen, etc. de la imagen según sea necesario */
+        /* Add styles as needed */
+    }
+    
+    .register-button img {
+        width: 300px; /* Adjust the width as needed */
+        height: 100px; /* Maintain the image's aspect ratio */
   }
   

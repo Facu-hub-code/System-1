@@ -1,26 +1,28 @@
 .signup-form {
-    /* Agrega estilos según sea necesario */
-  }
-  
-  .email-input {
-    display: flex;
-    align-items: center;
-  }
-  
-  .email-input img {
-    margin-right: 10px;
-    /* Puedes ajustar el margen según sea necesario */
-  }
-  
-  .password-input {
-    display: flex;
-    align-items: center;
-  }
-  
-  .password-input img {
-    margin-right: 10px;
-    /* Puedes ajustar el margen según sea necesario */
-  }
-  
-  /* Puedes seguir añadiendo estilos según sea necesario */
-  
+        /* Add styles as needed */
+    }
+    
+    .email-input,
+    .password-input {
+      position: relative;
+      top: 50%;  
+      left: 35%; 
+      height: 80px;
+    }
+    
+    .email-input img,
+    .password-input img {
+      position: relative;
+      top: 80%;  /* Ajusta la posición vertical según sea necesario */
+      left: 10%; /* Ajusta la posición horizontal según sea necesario */
+      transform: translate(-50%, -50%); /* Centra la imagen en función de su tamaño */
+      width: 200px; /* Ajusta el ancho según sea necesario */
+      height: 80px; /* Mantiene la proporción de la imagen */
+      /* Otros estilos según sea necesario */
+    }
+    
+    .email-input input,
+    .password-input input {
+      padding-left: 100px; /* Ajusta el espaciado a la izquierda para dejar espacio para la imagen */
+      /* Otros estilos según sea necesario */
+    }
