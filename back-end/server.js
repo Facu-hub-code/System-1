@@ -8,7 +8,11 @@ const mysql = require('mysql');
 require('dotenv').config();
 
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({
+  origin: 'http://18.218.29.30:3000', // frontend URL
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+}));
 
 const connection = mysql.createConnection({
   host: process.env.DB_HOST,
