@@ -18,7 +18,7 @@ const MyForm = () => {
     e.preventDefault();
 
     // Send form data to backend
-    fetch('http://localhost:3002/api/submit', {
+    fetch('http://18.218.29.30:3002/api/submit', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
