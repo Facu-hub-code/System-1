@@ -9,7 +9,7 @@ require('dotenv').config();
 
 app.use(bodyParser.json());
 app.use(cors({
-  origin: 'http://18.218.29.30:3000', // frontend URL
+  origin: 'http://localhost:3000', // frontend URL
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
 }));
