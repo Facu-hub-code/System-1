@@ -1,6 +1,5 @@
-// App.js
-import React from 'react';
-import { GoogleLogin } from '@react-oauth/google';
+
+import './App.css';
 import { jwtDecode } from 'jwt-decode';
 import {  Route, Routes } from 'react-router-dom';
 
@@ -13,24 +12,16 @@ function App() {
   console.log('Renderizando App');
   return (
     <div>
-      {/* Adds the oauth google button */}
-      {/* <GoogleLogin
-        className="google-login-button"
-        onSuccess={credentialResponse => {
-          const credentialResponseDecoded = jwtDecode(
-            credentialResponse.credential
-          );
-          console.log(credentialResponseDecoded);
-        }}
-        onError={() => {
-          console.log('Login Failed');
-        }}
-      />
-      <Routes>
-        <Route path="/" element={<SignUpPage />} />
-        <Route path="/confirmation" element={<ConfirmationPage />} />
-        <Route path="*" element={<p>Path not resolved</p>} />
-      </Routes>
+        <MyForm
+          onSuccess={data => {
+            console.log('Formulario enviado con éxito');
+            console.log(data);
+          }}
+          onError={error => {
+            console.log('Error al enviar el formulario');
+            console.log(error);
+          }}
+        />
     </div>
     );
     );
