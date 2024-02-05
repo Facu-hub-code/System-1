@@ -1,6 +1,5 @@
 import React from 'react';
 import App from './App';
-import SignUpPage from './components/SignUpPage';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
