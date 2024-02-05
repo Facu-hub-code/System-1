@@ -1,0 +1,12 @@
+.image-container {
+    width: 100%;
+    max-width: 50px; /* Define un ancho máximo si es necesario */
+    margin: 0 auto; /* Centra el contenedor */
+  }
+  
+  .responsive-image {
+    width: 100%; /* La imagen ocupará el 100% del ancho del contenedor */
+    height: auto; /* Se ajusta automáticamente para mantener la relación de aspecto */
+    display: block; /* Elimina cualquier espacio adicional debajo de la imagen */
+  }
+  

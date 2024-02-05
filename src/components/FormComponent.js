@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import './styles/MyForm.css'; 
+import '../styles/FormComponent.css'; 
 const MyForm = () => {
   const [formData, setFormData] = useState({
     company_name: '',
-    email: '',
-   
+    email: '',   
   });
 
   const handleInputChange = (e) => {
@@ -38,7 +37,7 @@ const MyForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        company_name:
+        Company Name:
         <input type="text" name="company_name" value={formData.company_name} onChange={handleInputChange} />
       </label>
       <br />
@@ -47,10 +46,10 @@ const MyForm = () => {
         <input type="email" name="email" value={formData.email} onChange={handleInputChange} />
       </label>
       <br />
-      <br />
       <button type="submit">Enviar</button>
     </form>
   );
+
 };
 
 export default MyForm;
