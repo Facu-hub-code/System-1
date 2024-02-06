@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/SignUpPage.css';
+import MyForm from '../MyForm';
 
 
 const SignUpPage = () => {
@@ -18,7 +19,7 @@ const SignUpPage = () => {
           <p className="welcome-message">
             Welcome! You can sign-up using email and a company name. Or using Google!
           </p>
-        
+          <MyForm />
         </div>
       </div>
     );
