@@ -46,8 +46,7 @@ const SignUpPage = () => {
 export default SignUpPage;
 =======
 import React from 'react';
-import '../styles/SignUpPage.css';
-import MyForm from '../MyForm';
+import FormComponent from '../components/FormComponent';
 
 
 const SignUpPage = () => {
@@ -66,7 +65,7 @@ const SignUpPage = () => {
           <p className="welcome-message">
             Welcome! You can sign-up using email and a company name. Or using Google!
           </p>
-          <MyForm />
+          <FormComponent />
         </div>
       </div>
     );

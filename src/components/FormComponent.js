@@ -7,6 +7,7 @@ const FormComponent = () => {
     company_name: '',
     email: '',
 
+
   });
 
   const handleInputChange = (e) => {
@@ -53,6 +54,7 @@ const FormComponent = () => {
       <label>
 
         company_name:
+
 
         <input type="text" name="company_name" value={formData.company_name} onChange={handleInputChange} />
       </label>
