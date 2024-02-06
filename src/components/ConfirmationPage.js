@@ -3,8 +3,6 @@
 import React from 'react';
 import { useLocation, Navigate } from 'react-router-dom';
 
-
-
 const ConfirmationPage = () => {
   const location = useLocation();
   const { state } = location;
@@ -13,6 +11,7 @@ const ConfirmationPage = () => {
     // Si los datos requeridos no están presentes, redirigir al usuario a la página de sign-up
     return <Navigate to="/" />;
   }
+
 
   return (
     <div>
