@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/FormComponent.css'; 
+
 const MyForm = () => {
   const [formData, setFormData] = useState({
     company_name: '',
-    email: '',   
+    email: '',
   });
 
   const handleInputChange = (e) => {
@@ -37,7 +39,7 @@ const MyForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        Company Name:
+        company_name:
         <input type="text" name="company_name" value={formData.company_name} onChange={handleInputChange} />
       </label>
       <br />
@@ -46,10 +48,10 @@ const MyForm = () => {
         <input type="email" name="email" value={formData.email} onChange={handleInputChange} />
       </label>
       <br />
+      <br />
       <button type="submit">Enviar</button>
     </form>
   );
-
 };
 
 export default MyForm;
