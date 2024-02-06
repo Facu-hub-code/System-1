@@ -1,9 +1,13 @@
-
-import './App.css';
+// App.js
+import React from 'react';
+import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode';
-import { Routes, Route } from 'react-router-dom';
-import SignUpComponent from './components/SignUpComponent';
+import {  Route, Routes } from 'react-router-dom';
+
+
+import SignUpPage from './components/SignUpPage';
 import ConfirmationPage from './components/ConfirmationPage';
+import MyForm from './MyForm';
 
 function App() {
   console.log('Renderizando App');
@@ -21,14 +25,12 @@ function App() {
         onError={() => {
           console.log('Login Failed');
         }}
-      /> */}
+      />
       <Routes>
-        <Route path="/" element={<SignUpComponent />} />
+        <Route path="/" element={<SignUpPage />} />
         <Route path="/confirmation" element={<ConfirmationPage />} />
-        <Route path="*" element={<h1>Not Found</h1>} />
+        <Route path="*" element={<p>Path not resolved</p>} />
       </Routes>
-      
-  
     </div>
     );
     );
