@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+<<<<<<< HEAD:src/MyForm.js
 import { useNavigate } from 'react-router-dom';
 import './styles/MyForm.css'; 
 
@@ -6,6 +7,13 @@ const MyForm = () => {
   const [formData, setFormData] = useState({
     company_name: '',
     email: '',
+=======
+import '../styles/FormComponent.css'; 
+const MyForm = () => {
+  const [formData, setFormData] = useState({
+    company_name: '',
+    email: '',   
+>>>>>>> ab87f3deb9fe988b60b302fd6d8d208eb3389a87:src/components/FormComponent.js
   });
 
   const navigate = useNavigate();
@@ -52,7 +60,7 @@ const MyForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        company_name:
+        Company Name:
         <input type="text" name="company_name" value={formData.company_name} onChange={handleInputChange} />
       </label>
       <br />
@@ -61,10 +69,10 @@ const MyForm = () => {
         <input type="email" name="email" value={formData.email} onChange={handleInputChange} />
       </label>
       <br />
-      <br />
       <button type="submit">Enviar</button>
     </form>
   );
+
 };
 
 export default MyForm;
