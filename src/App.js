@@ -2,7 +2,10 @@
 import './App.css';
 import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode';
-import MyForm from './MyForm';
+import { Routes, Route } from 'react-router-dom';
+import SignUpComponent from './components/SignUpComponent';
+import ConfirmationPage from './components/ConfirmationPage';
+
 function App() {
   console.log('Renderizando App');
   return (
@@ -20,16 +23,13 @@ function App() {
           console.log('Login Failed');
         }}
       />
-        <MyForm
-          onSuccess={data => {
-            console.log('Formulario enviado con éxito');
-            console.log(data);
-          }}
-          onError={error => {
-            console.log('Error al enviar el formulario');
-            console.log(error);
-          }}
-        />
+      <Routes>
+        <Route path="/" element={<SignUpComponent />} />
+        <Route path="/confirmation" element={<ConfirmationPage />} />
+        <Route path="*" element={<h1>Not Found</h1>} />
+      </Routes>
+      
+  
     </div>
     );
 }
