@@ -78,7 +78,11 @@ app.post('/api/submit', (req, res) => {
             console.error('Error inserting into database:', insertErr);
             res.status(500).json({ error: 'Internal server error' });
           } else {
-            res.json({ message: 'User registered successfully' });
+            res.json({
+              message: 'User registered successfully',
+                redirectURL: '/confirmation', // Route to which the frontend will be redirected
+            });
+
           }
         });
       }
