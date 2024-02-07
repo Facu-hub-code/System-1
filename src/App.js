@@ -10,7 +10,7 @@ function App() {
   return (
     <div>
       {/* Adds the oauth google button */}
-      <GoogleLogin
+      {/* <GoogleLogin
         className="google-login-button"
         onSuccess={credentialResponse => {
           const credentialResponseDecoded = jwtDecode(
@@ -21,7 +21,7 @@ function App() {
         onError={() => {
           console.log('Login Failed');
         }}
-      />
+      /> */}
       <Routes>
         <Route path="/" element={<SignUpComponent />} />
         <Route path="/confirmation" element={<ConfirmationPage />} />
