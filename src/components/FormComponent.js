@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/FormComponent.css'; 
 
-const MyForm = () => {
+const FormComponent = () => {
   const [formData, setFormData] = useState({
     company_name: '',
     email: '',
@@ -39,8 +39,8 @@ const MyForm = () => {
     
       if (data.redirectURL) {
         console.log(data.redirectURL);
-        // Realiza la redirección utilizando useHistory
-        navigate(data.redirectURL);
+        // Realiza la redirección pasando el estado como propiedad de state
+        navigate('/confirmation', { state: formData });
       } else {
         console.log('No redirect URL');
       }
@@ -67,4 +67,4 @@ const MyForm = () => {
   );
 };
 
-export default MyForm;
+export default FormComponent;
