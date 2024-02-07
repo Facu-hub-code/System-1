@@ -70,5 +70,9 @@ const FormComponent = () => {
   );
 };
 
+<<<<<<< HEAD
 export default FormComponent;
 
+=======
+export default FormComponent;
+>>>>>>> d6a2d8e (route /configuration  secured)

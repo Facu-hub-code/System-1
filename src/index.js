@@ -10,6 +10,7 @@ const root = createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
+<<<<<<< HEAD
       <BrowserRouter>
         <App />
     </BrowserRouter>,
@@ -29,6 +30,11 @@ root.render(
     </BrowserRouter>,
     </GoogleOAuthProvider>
 >>>>>>> f0450db (fixed merge problems)
+=======
+      <BrowserRouter>
+        <App />
+    </BrowserRouter>,
+>>>>>>> d6a2d8e (route /configuration  secured)
   </React.StrictMode>
 );
 // If you want to start measuring performance in your app, pass a function

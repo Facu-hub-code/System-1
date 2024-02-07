@@ -34,10 +34,14 @@ function App() {
           console.log('Login Failed');
         }}
 <<<<<<< HEAD
+<<<<<<< HEAD
       /> */}
 =======
       />
 >>>>>>> f0450db (fixed merge problems)
+=======
+      /> */}
+>>>>>>> d6a2d8e (route /configuration  secured)
       <Routes>
         <Route path="/" element={<SignUpComponent />} />
         <Route path="/confirmation" element={<ConfirmationPage />} />
