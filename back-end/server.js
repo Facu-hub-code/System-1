@@ -10,7 +10,7 @@ require('dotenv').config();
 app.use(bodyParser.json());
 
 const corsOptions = {
-  origin: 'http://18.218.29.30:3000', // frontend URL
+  origin: 'http://localhost:3000', // frontend URL
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
 };
@@ -78,7 +78,11 @@ app.post('/api/submit', (req, res) => {
             console.error('Error inserting into database:', insertErr);
             res.status(500).json({ error: 'Internal server error' });
           } else {
-            res.json({ message: 'User registered successfully' });
+            res.json({
+              message: 'User registered successfully',
+                redirectURL: '/confirmation', // Route to which the frontend will be redirected
+            });
+
           }
         });
       }

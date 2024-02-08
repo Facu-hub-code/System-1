@@ -1,0 +1,21 @@
+.group-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 200px; /* Ajusta el valor según el margen que desees */
+}
+
+.inner-container {
+  display: flex;
+  width: 100%;
+}
+
+.left-section, .right-section {
+  flex: 1;
+  margin: 5px; /* Ajusta el valor según el margen que desees entre la imagen y el formulario */
+}
+
+.left-section {
+  display: flex;
+  justify-content: flex-end;
+}
