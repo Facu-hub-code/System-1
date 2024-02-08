@@ -6,6 +6,8 @@ const FormComponent = () => {
   const [formData, setFormData] = useState({
     company_name: '',
     email: '',
+
+
   });
 
   const handleInputChange = (e) => {
@@ -17,7 +19,6 @@ const FormComponent = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     try {
       const response = await fetch('http://localhost:3002/api/submit', {
         method: 'POST',
@@ -45,12 +46,16 @@ const FormComponent = () => {
     } catch (error) {
       console.error('Error while sending the data:', error);
     }
+
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <label>
+
         company_name:
+
+
         <input type="text" name="company_name" value={formData.company_name} onChange={handleInputChange} />
       </label>
       <br />
@@ -65,4 +70,9 @@ const FormComponent = () => {
   );
 };
 
+<<<<<<< HEAD
 export default FormComponent;
+
+=======
+export default FormComponent;
+>>>>>>> d6a2d8e (route /configuration  secured)
