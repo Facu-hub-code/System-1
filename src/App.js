@@ -4,17 +4,11 @@ import { Routes, Route } from 'react-router-dom';
 import SignUpComponent from './components/SignUpComponent';
 import ConfirmationPage from './components/ConfirmationPage';
 
-<<<<<<< HEAD
-=======
-import GroupComponent from './components/GroupComponent'
-import WelcomeBanner from './components/WelcomeBanner';
->>>>>>> ab87f3d (cambios esteticos)
-=======
->>>>>>> f0450db (fixed merge problems)
 function App() {
   console.log('Renderizando App');
   return (
     <div>
+
       {/* Adds the oauth google button */}
       {/* <GoogleLogin
         className="google-login-button"
@@ -33,6 +27,7 @@ function App() {
         <Route path="/confirmation" element={<ConfirmationPage />} />
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
+
     </div>
     );
 }

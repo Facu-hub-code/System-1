@@ -10,6 +10,8 @@ const FormComponent = () => {
 
   });
 
+  const navigate = useNavigate();
+
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
@@ -17,7 +19,7 @@ const FormComponent = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await fetch('http://localhost:3002/api/submit', {
@@ -70,9 +72,6 @@ const FormComponent = () => {
   );
 };
 
-<<<<<<< HEAD
 export default FormComponent;
 
-=======
-export default FormComponent;
->>>>>>> d6a2d8e (route /configuration  secured)
+
