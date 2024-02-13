@@ -1,6 +1,5 @@
 
 import './App.css';
-import { jwtDecode } from 'jwt-decode';
 import { Routes, Route } from 'react-router-dom';
 import SignUpComponent from './components/SignUpComponent';
 import ConfirmationPage from './components/ConfirmationPage';
@@ -28,9 +27,6 @@ function App() {
         <Route path="/confirmation" element={<ConfirmationPage />} />
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
-      
-
-
 
     </div>
     );
