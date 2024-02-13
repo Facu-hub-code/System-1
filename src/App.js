@@ -1,6 +1,5 @@
 
 import './App.css';
-import { Routes, Route } from 'react-router-dom';
 import SignUpComponent from './components/SignUpComponent';
 import ConfirmationPage from './components/ConfirmationPage';
 

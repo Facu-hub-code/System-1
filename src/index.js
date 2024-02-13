@@ -1,8 +1,6 @@
 import React from 'react';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-<<<<<<< HEAD
-import { GoogleOAuthProvider } from '@react-oauth/google';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Route } from 'react-router-dom';
 
@@ -10,31 +8,9 @@ const root = createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-<<<<<<< HEAD
-      <BrowserRouter>
-        <App />
-    </BrowserRouter>,
-=======
-
-const root = createRoot(document.getElementById('root'));
-
-root.render(
-  <React.StrictMode>
-<<<<<<< HEAD
-        <App />
->>>>>>> 6d076d5 (del google auth)
-=======
-    <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
-      <BrowserRouter>
-        <App />
-    </BrowserRouter>,
-    </GoogleOAuthProvider>
->>>>>>> f0450db (fixed merge problems)
-=======
-      <BrowserRouter>
-        <App />
-    </BrowserRouter>,
->>>>>>> d6a2d8e (route /configuration  secured)
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
 // If you want to start measuring performance in your app, pass a function
