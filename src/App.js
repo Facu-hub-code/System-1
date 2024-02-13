@@ -2,14 +2,7 @@
 import './App.css';
 import SignUpComponent from './components/SignUpComponent';
 import ConfirmationPage from './components/ConfirmationPage';
-
-<<<<<<< HEAD
-=======
-import GroupComponent from './components/GroupComponent'
-import WelcomeBanner from './components/WelcomeBanner';
->>>>>>> ab87f3d (cambios esteticos)
-=======
->>>>>>> f0450db (fixed merge problems)
+import { Routes, Route } from 'react-router-dom';
 function App() {
   console.log('Renderizando App');
   return (
@@ -33,7 +26,7 @@ function App() {
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
     </div>
-    );
+  );
 }
 
 export default App;
