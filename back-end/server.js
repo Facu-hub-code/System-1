@@ -10,7 +10,7 @@ require('dotenv').config();
 app.use(bodyParser.json());
 
 const corsOptions = {
-  origin: 'http://localhost:3000', // frontend URL
+  origin: 'http://vsq.marveladvisors.com:3000/', // frontend URL
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
 };

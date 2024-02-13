@@ -18,6 +18,7 @@ const FormComponent = () => {
   };
 
   const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await fetch('http://localhost:3002/api/submit', {
@@ -68,5 +69,6 @@ const FormComponent = () => {
 };
 
 export default FormComponent;
+
 
 

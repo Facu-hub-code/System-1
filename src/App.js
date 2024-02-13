@@ -7,6 +7,7 @@ function App() {
   console.log('Renderizando App');
   return (
     <div>
+
       {/* Adds the oauth google button */}
       {/* <GoogleLogin
         className="google-login-button"
@@ -25,6 +26,7 @@ function App() {
         <Route path="/confirmation" element={<ConfirmationPage />} />
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
+
     </div>
   );
 }
