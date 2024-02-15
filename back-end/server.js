@@ -42,9 +42,9 @@ process.on('SIGINT', () => {
 connection.connect((err) => {
   if (err) {
     console.error('Error connecting to the database:', err);
-  } else {
-    console.log('Successfully connected to the database');
+    return;
   }
+  console.log('Successfully connected to the database');
 });
 
 
@@ -52,7 +52,7 @@ app.get('/', (req, res) => {
   res.send('Hello from the Express server!');
 });
 
-app.listen(PORT, 'localhost', () => {
+app.listen(PORT, () => {
   console.log(`Express server running on port http://localhost:${PORT}`);
 });
 
@@ -65,27 +65,27 @@ app.post('/api/submit', (req, res) => {
   connection.query(query, [formData.email], (err, results) => {
     if (err) {
       console.error('Error executing query:', err);
-      res.status(500).json({ error: 'Internal server error' });
-    } else {
-      if (results.length > 0) {
-        // The email already exists, send existing user message
-        res.json({ message: 'User already exists' });
-      } else {
-        // The email does not exist, save to the database
-        const insertQuery = 'INSERT INTO Users (company_name, email) VALUES (?, ?)';
-        connection.query(insertQuery, [formData.company_name, formData.email], (insertErr) => {
-          if (insertErr) {
-            console.error('Error inserting into database:', insertErr);
-            res.status(500).json({ error: 'Internal server error' });
-          } else {
-            res.json({
-              message: 'User registered successfully',
-                redirectURL: '/confirmation', // Route to which the frontend will be redirected
-            });
-
-          }
-        });
-      }
+      return res.status(500).json({ error: 'Internal server error' });
     }
+
+    if (results.length > 0) {
+      // The email already exists, send existing user message
+      return res.status(400).json({ message: 'User already exists' });
+    }
+
+    // The email does not exist, save to the database
+    const insertQuery = 'INSERT INTO Users (company_name, email) VALUES (?, ?)';
+    connection.query(insertQuery, [formData.company_name, formData.email], (insertErr) => {
+      if (insertErr) {
+        console.error('Error inserting into database:', insertErr);
+        return res.status(500).json({ error: 'Internal server error' });
+      }
+
+      return res.json({
+        message: 'User registered successfully',
+        redirectURL: '/confirmation', // Route to which the frontend will be redirected
+      });
+    });
   });
 });
+

@@ -1,9 +1,9 @@
 import React from 'react';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { GoogleOAuthProvider } from '@react-oauth/google';
+
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter} from 'react-router-dom';
 
 const root = createRoot(document.getElementById('root'));
 

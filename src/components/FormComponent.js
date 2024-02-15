@@ -39,8 +39,6 @@ const FormComponent = () => {
       console.log('Backend reply:', data, data.redirectURL);
     
       if (data.redirectURL) {
-        console.log(data.redirectURL);
-        // Realiza la redirección pasando el estado como propiedad de state
         navigate('/confirmation', { state: formData });
       } else {
         console.log('No redirect URL');
