@@ -2,7 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3002;
 const cors = require('cors'); // middleware cors
 const mysql = require('mysql');
 require('dotenv').config();
@@ -52,8 +52,8 @@ app.get('/', (req, res) => {
   res.send('Hello from the Express server!');
 });
 
-app.listen(PORT, () => {
-  console.log(`Express server running on port ${PORT}`);
+app.listen(PORT, 'localhost', () => {
+  console.log(`Express server running on port http://localhost:${PORT}`);
 });
 
 app.post('/api/submit', (req, res) => {
