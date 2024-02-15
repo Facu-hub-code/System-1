@@ -2,7 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 8080;
 const cors = require('cors'); // middleware cors
 const mysql = require('mysql');
 require('dotenv').config();
@@ -10,7 +10,7 @@ require('dotenv').config();
 app.use(bodyParser.json());
 
 const corsOptions = {
-  origin: 'http://vsq.marveladvisors.com:3000', // frontend URL
+  origin: 'http://vsq.marveladvisors.com', // frontend URL
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
 };
