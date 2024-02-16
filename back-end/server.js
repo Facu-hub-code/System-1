@@ -1,20 +1,26 @@
-// backend/server.js
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const PORT = process.env.PORT || 3002;
-const cors = require('cors'); // middleware cors
+const cors = require('cors');
 const mysql = require('mysql');
 require('dotenv').config();
 
 app.use(bodyParser.json());
 
+// Configuración de CORS
+const allowedOrigins = ['http://localhost', 'http://127.0.0.1', 'http://vsq.marveladvisors.com'];
 const corsOptions = {
-  origin: 'http://vsq.marveladvisors.com', // frontend URL
+  origin: function (origin, callback) {
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
 };
-
 app.use(cors(corsOptions));
 
 const connection = mysql.createConnection({

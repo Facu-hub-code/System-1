@@ -6,8 +6,6 @@ const FormComponent = () => {
   const [formData, setFormData] = useState({
     company_name: '',
     email: '',
-
-
   });
 
   const navigate = useNavigate();
@@ -26,6 +24,7 @@ const FormComponent = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': 'http://vsq.marveladvisors.com', // Configura el origen permitido para el backend
         },
         body: JSON.stringify(formData),
       });
@@ -52,10 +51,7 @@ const FormComponent = () => {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-
         company_name:
-
-
         <input type="text" name="company_name" value={formData.company_name} onChange={handleInputChange} />
       </label>
       <br />
@@ -71,5 +67,3 @@ const FormComponent = () => {
 };
 
 export default FormComponent;
-
-
