@@ -69,7 +69,10 @@ app.listen(PORT, () => {
 
 app.post('/api/submit', (req, res) => {
   const formData = req.body;
-  console.log('Data received on the backend:', formData);
+  if ( !(results.length > 0) ) { // // If the email doesn't exists, send OK msg
+    console.log('Data received on the backend:', formData);
+  }
+  
 
   // Check if the email already exists in the database
   const query = 'SELECT * FROM Users WHERE email = ?';
