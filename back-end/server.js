@@ -9,7 +9,7 @@ require('dotenv').config();
 app.use(bodyParser.json());
 
 // Configuración de CORS
-const allowedOrigins = ['http://localhost', 'http://127.0.0.1', 'http://vsq.marveladvisors.com'];
+const allowedOrigins = ['http://localhost:3002','http://localhost', 'http://127.0.0.1', 'http://vsq.marveladvisors.com'];
 const corsOptions = {
   origin: function (origin, callback) {
     if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
