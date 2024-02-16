@@ -30,6 +30,12 @@ const connection = mysql.createConnection({
   database: process.env.DB_DATABASE,
 });
 
+// Manejo de errores centralizado
+function handleServerError(res, err, defaultMessage = 'Internal server error') {
+  console.error('An error occurred:', err);
+  res.status(500).json({ error: defaultMessage, message: err.message });
+}
+
 // Handle SIGINT signals
 process.on('SIGINT', () => {
   console.log('\nClosing the server...');
@@ -47,12 +53,11 @@ process.on('SIGINT', () => {
 
 connection.connect((err) => {
   if (err) {
-    console.error('Error connecting to the database:', err);
+    handleServerError(console, err, 'Error connecting to the database');
     return;
   }
   console.log('Successfully connected to the database');
 });
-
 
 app.get('/', (req, res) => {
   res.send('Hello from the Express server!');
@@ -70,8 +75,8 @@ app.post('/api/submit', (req, res) => {
   const query = 'SELECT * FROM Users WHERE email = ?';
   connection.query(query, [formData.email], (err, results) => {
     if (err) {
-      console.error('Error executing query:', err);
-      return res.status(500).json({ error: 'Internal server error' });
+      handleServerError(res, err);
+      return;
     }
 
     if (results.length > 0) {
@@ -83,8 +88,8 @@ app.post('/api/submit', (req, res) => {
     const insertQuery = 'INSERT INTO Users (company_name, email) VALUES (?, ?)';
     connection.query(insertQuery, [formData.company_name, formData.email], (insertErr) => {
       if (insertErr) {
-        console.error('Error inserting into database:', insertErr);
-        return res.status(500).json({ error: 'Internal server error' });
+        handleServerError(res, insertErr, 'Error inserting into database');
+        return;
       }
 
       return res.json({
@@ -94,4 +99,3 @@ app.post('/api/submit', (req, res) => {
     });
   });
 });
-
