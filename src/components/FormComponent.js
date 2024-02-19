@@ -37,7 +37,9 @@ const FormComponent = () => {
 
       console.log('Backend reply:', data, data.redirectURL);
     
-      if (data.redirectURL) {
+      if (data.message === 'User already exists') {
+        setErrorMessage('El usuario ya existe.');
+      } else if (data.redirectURL) {
         navigate('/confirmation', { state: formData });
       } else {
         console.log('No redirect URL');
