@@ -81,7 +81,7 @@ app.post('/api/submit', (req, res) => {
 
     if (results.length > 0) {
       // The email already exists, send existing user message
-      return res.status(400).json({ message: 'User already exists' });
+      return res.status(200).json({ message: 'User already exists' });
     }
 
     // The email does not exist, save to the database

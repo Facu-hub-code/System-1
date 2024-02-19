@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/FormComponent.css'; 
+import '../styles/FormComponent.css';
 
 const FormComponent = () => {
   const [formData, setFormData] = useState({
@@ -34,36 +34,39 @@ const FormComponent = () => {
       }
 
       const data = await response.json();
+      console.log('Backend reply:', data);
+	if (data.message === 'User already exists') {
+  		alert('El usuario ya existe.'); // Muestra una alerta al usuario
+	}else if (data.redirectURL) {
+  		navigate('/confirmation', { state: formData });
+	} else {
+  		console.log('No hay URL de redireccionamiento');
+	}
 
-      console.log('Backend reply:', data, data.redirectURL);
-    
-      if (data.redirectURL) {
-        navigate('/confirmation', { state: formData });
-      } else {
-        console.log(data.message);
-      }
     } catch (error) {
       console.error('Error while sending the data:', error);
     }
-
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        company_name:
-        <input type="text" name="company_name" value={formData.company_name} onChange={handleInputChange} />
-      </label>
-      <br />
-      <label>
-        Email:
-        <input type="email" name="email" value={formData.email} onChange={handleInputChange} />
-      </label>
-      <br />
-      <br />
-      <button type="submit">Enviar</button>
-    </form>
+    <div>
+      <form onSubmit={handleSubmit}>
+        <label>
+          company_name:
+          <input type="text" name="company_name" value={formData.company_name} onChange={handleInputChange} />
+        </label>
+        <br />
+        <label>
+          Email:
+          <input type="email" name="email" value={formData.email} onChange={handleInputChange} />
+        </label>
+        <br />
+        <br />
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
   );
 };
 
 export default FormComponent;
+
