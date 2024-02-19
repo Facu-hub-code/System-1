@@ -20,7 +20,7 @@ const FormComponent = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:3002/api/submit', {
+      const response = await fetch('http://18.218.29.30:3002/api/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
