@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/FormComponent.css';
+import '../styles/FormComponent.css'; 
 
 const FormComponent = () => {
   const [formData, setFormData] = useState({
     company_name: '',
     email: '',
   });
-  const [errorMessage, setErrorMessage] = useState('');
+
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
@@ -34,18 +34,18 @@ const FormComponent = () => {
       }
 
       const data = await response.json();
-      console.log('Backend reply:', data);
 
-      if (data.message === 'User already exists') {
-        setErrorMessage('El usuario ya existe.');
-      } else if (data.redirectURL) {
+      console.log('Backend reply:', data, data.redirectURL);
+    
+      if (data.redirectURL) {
         navigate('/confirmation', { state: formData });
       } else {
-        console.log('No redirect URL');
+        console.log(data.message);
       }
     } catch (error) {
       console.error('Error while sending the data:', error);
     }
+
   };
 
   return (
@@ -60,7 +60,6 @@ const FormComponent = () => {
         <input type="email" name="email" value={formData.email} onChange={handleInputChange} />
       </label>
       <br />
-      {errorMessage && <div>{errorMessage}</div>}
       <br />
       <button type="submit">Enviar</button>
     </form>
