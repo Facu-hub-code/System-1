@@ -50,9 +50,11 @@ const FormComponent = () => {
 
   return (
     <div>
+      
       <form onSubmit={handleSubmit}>
+        <h2>Register for a link to the Form</h2>
         <label>
-          company_name:
+          Company Name:
           <input type="text" name="company_name" value={formData.company_name} onChange={handleInputChange} />
         </label>
         <br />
@@ -62,7 +64,9 @@ const FormComponent = () => {
         </label>
         <br />
         <br />
-        <button type="submit">Enviar</button>
+        <button type="submit">
+          <strong>SEND</strong>
+        </button>
       </form>
     </div>
   );

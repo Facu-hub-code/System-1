@@ -1,9 +1,9 @@
 /* FormComponent.css */
 
 form {
-  font-family: 'Arial Black', sans-serif; /* Cambia 'Arial' por la fuente deseada */
   max-width: 400px;
   margin: 0 auto;
+
 }
 
 label {
@@ -20,6 +20,11 @@ input {
   box-sizing: border-box;
 }
 
+h2 {
+  font-size: 22px;
+  margin-bottom: 40px;
+}
+
 button {
   width: 100%;
   background-color: #4caf50;
@@ -29,6 +34,7 @@ button {
   border-radius: 12px;
   cursor: pointer;
   font-size: 22px; /* Tamaño de fuente para el botón */
+  font-family: 'Times New Roman', Times, serif;
   box-sizing: border-box;
 }
 

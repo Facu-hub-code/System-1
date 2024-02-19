@@ -5,8 +5,8 @@ import '../styles/WelcomeBanner.css'; // Crea este archivo para los estilos
 const WelcomeBanner = ({ username }) => {
   return (
     <div className="welcome-banner">
-      <h1>Welcome to Marvel Advisors Secure Form!</h1>
-      <p>Thank you for for choosing us.</p>
+      <h1>Welcome to the Vendor Security Assessment Questionnaire!</h1>
+      <img className="marvel-logo" src={require('../images/MarvelLogo.png')} alt="Marvel Logo" />
     </div>
   );
 };
